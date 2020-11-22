@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "dossieramplifyappb7f1f0d5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "storage": {
+    "s38c1bcf16": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}

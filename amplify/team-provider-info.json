@@ -1,0 +1,22 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dossieramplifyapp-dev-174512-authRole",
+      "UnauthRoleArn": "arn:aws:iam::644563956343:role/amplify-dossieramplifyapp-dev-174512-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::644563956343:role/amplify-dossieramplifyapp-dev-174512-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dossieramplifyapp-dev-174512-deployment",
+      "UnauthRoleName": "amplify-dossieramplifyapp-dev-174512-unauthRole",
+      "StackName": "amplify-dossieramplifyapp-dev-174512",
+      "StackId": "arn:aws:cloudformation:us-east-1:644563956343:stack/amplify-dossieramplifyapp-dev-174512/35129e70-2b9b-11eb-800f-0ea3835b933d",
+      "AmplifyAppId": "d3hlwu5ozfu1p2"
+    },
+    "categories": {
+      "auth": {
+        "dossieramplifyappb7f1f0d5": {
+          "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"142549191369-6rip6lgkkdsg2brh1e64o8uutv43v6du.apps.googleusercontent.com\",\"client_secret\":\"PqT1cC-JrhB5BAJAfgVkb0QV\"}]"
+        }
+      }
+    }
+  }
+}
