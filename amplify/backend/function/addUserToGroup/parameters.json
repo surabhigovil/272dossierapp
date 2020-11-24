@@ -1,0 +1,12 @@
+{
+    "AuthCognitoUserPoolArn": {
+      "Fn::Sub": [
+        "arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${id}",
+        {
+          "id": {
+            "Fn::GetAtt": ["authdossieramplifyappb7f1f0d5", "Outputs.UserPoolId"]
+          }
+        }
+      ]
+    }
+  }

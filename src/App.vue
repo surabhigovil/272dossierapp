@@ -3,9 +3,6 @@
     <amplify-authenticator>
       <div>
         <h1>Hey, {{user.username}}!</h1>
-        <div>
-          {{ getFile() }}
-        </div>
         <label>File
           <input type="file" id="file" ref="file" v-on:change="onFileChange()"/>
         </label>
@@ -20,15 +17,10 @@ import { Auth, Storage} from 'aws-amplify';
 
 Auth.currentAuthenticatedUser().then(console.log('User authenticated'))
 
-const photoPickerConfig = {
-  path: 'images/',
-}
-
 export default {
   name: 'app',
   data() {
     return {
-      photoPickerConfig,
       user: { },
     }
   },
@@ -38,19 +30,15 @@ export default {
       if (this.file)
         console.log("file is present");
       if (this.file) {
-        Storage.put(`userimages/${this.$refs.file.files[0].name}`,
-                this.$refs.file.files[0],{ contentType: this.$refs.file.files[0].type })
+        Storage.put(`userimages/${this.$refs.file.files[0].name}`, this.$refs.file.files[0],{ contentType: this.$refs.file.files[0].type })
         .then (result => console.log(result)) // {key: "test.txt"}
+        .catch(err => console.log(err));
+
+        Storage.get(`userimages/${this.$refs.file.files[0].name}`, {download: true}) // for listing ALL files without prefix, pass '' instead
+        .then(result => console.log(result))
         .catch(err => console.log(err));
       }
     },
-    getFile() {
-      Storage.get('userimages/') // for listing ALL files without prefix, pass '' instead
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
-
-      console.log(Storage)
-    }
   },  
   created() {
     // authentication state managament

@@ -700,7 +700,18 @@ Resources:
           unauthenticated: !Ref unauthRoleArn
           authenticated: !Ref authRoleArn
     DependsOn: IdentityPool
-  
+
+  UserPoolGroupAdmins:
+    Type: 'AWS::Cognito::UserPoolGroup'
+    Properties:
+      GroupName: admin
+      UserPoolId: !Ref UserPool
+
+  UserPoolGroupUsers:
+    Type: 'AWS::Cognito::UserPoolGroup'
+    Properties:
+      GroupName: users
+      UserPoolId: !Ref UserPool
 
 Outputs :
   
